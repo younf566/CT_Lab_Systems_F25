@@ -1,0 +1,29 @@
+/* using flex box to define our collage area */
+.collage{
+    display: flex; 
+    /* flex-wrap: wrap; allows items to wrap to next line */
+    flex-direction: row; /* items will be in a row */
+    flex: 3; 
+    gap: 20px;
+    width: 100%;
+}
+
+.collage img{
+    /* align-content: stretch; stretch images to fill space */
+    width: 100%; 
+    flex-grow: 1; /* allows images to grow to fill space */
+    align-items: center;
+    padding: 5px;
+    justify-content: space-between;
+    max-height: 300px;
+    object-fit: cover; /* ensures images cover the area without distortion */
+}
+
+.column{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+

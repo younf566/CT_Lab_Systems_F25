@@ -1,0 +1,21 @@
+/*basic grid layout for image collage*/
+.collage{
+    display: grid; 
+    /*
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    */
+    grid-template-rows: repeat(auto-fit, minmax(150px, auto));
+    grid-template-columns: 1fr 2fr 1fr; /*center column is twice the height of side columns*/
+    justify-items: center;
+    align-items: start;
+    gap: 10px;
+    height: 100vh
+}
+
+.collage img{
+    width: 100%; 
+    height: auto;
+    max-height: 100vh;
+    object-fit: cover; /* ensures images cover the area without distortion */
+    padding: 5px;
+}
