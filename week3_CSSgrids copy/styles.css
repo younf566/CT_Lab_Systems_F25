@@ -1,0 +1,25 @@
+#collage{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between; 
+    gap: 10px;
+}
+
+#collage .image-container img{
+    width: 25vw; 
+    height: 300px; 
+    object-fit: cover;
+    /* flex-grow: 1;  */
+    align-items: center;
+    /* width: 200px;  */
+}
+
+#collage .image-container{
+    flex-basis: 25%; 
+    /* flex-grow: 1;  */
+    /* width: 200px;  */
+}
+.image-container p{
+    width: 100%; 
+}
