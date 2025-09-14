@@ -9,3 +9,12 @@ document.getElementById('toggleGridBtn').addEventListener('click', function() {
 	const grid = document.getElementById('grid');
 	grid.classList.toggle('alt-grid');
 });
+
+// Trigger animation on item 1 when clicked
+const item1 = document.getElementById('item1');
+item1.addEventListener('click', function() {
+	item1.classList.add('animate-bounce');
+});
+item1.addEventListener('animationend', function() {
+	item1.classList.remove('animate-bounce');
+});
