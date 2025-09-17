@@ -18,3 +18,13 @@ item1.addEventListener('click', function() {
 item1.addEventListener('animationend', function() {
 	item1.classList.remove('animate-bounce');
 });
+
+//if i've clicked on my character 
+    // execute move function 
+    // is selected 
+
+//boolean to keep track of whether character is selected
+
+//move function 
+// set the x & y transform to my mouse position  
+
