@@ -1,0 +1,15 @@
+@import url(nav.css);
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-size: 48px; 
+}
+
+.hero-image{
+    width: 100vw;
+    height: 400px;
+    object-fit: cover;
+}
