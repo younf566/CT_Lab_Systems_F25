@@ -1,12 +1,11 @@
+/* styling for our nav bar */
 nav ul{
-    display: flex;
-    flex-direction: row;
-    text-decoration: none;
-    width: 100vw;
-    justify-content: center;
-    list-style: none;
+   display: flex; 
+   flex-direction: row; 
+   justify-content: center;
+   list-style: none;
 }
 
-.nav-item {
-    padding: 20px; 
+.nav-item{
+   padding: 20px; 
 }

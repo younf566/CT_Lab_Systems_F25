@@ -1,0 +1,15 @@
+{% extends "base.njk" %}
+
+{# pulls in content from our base.njk layout #}
+
+{# block and endblock tags can be used when we want to inject custom code into our template #}
+{% block content %}
+  {% if featured %}
+     <p> Featured post !!! </p>
+  {% endif %}
+  <article>
+    <h2>{{ title }}</h2>
+    <p><em>{{ date | readableDate }}</em></p>
+    {{ content | safe }}
+  </article>
+{% endblock %}
