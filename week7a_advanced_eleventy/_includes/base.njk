@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <title>{{ site.title }}</title>
   <link rel="stylesheet" href="/styles/styles.css">
+  {% if tag == 'post' %}
+    //link for style sheet 
+  {% endif %} 
 </head>
 
 <body>
@@ -22,7 +25,7 @@
         {% for post in collections.post %}
         <li>
           <a href="{{ post.url }}">{{ post.data.title }}</a> –
-          {{ post.date }}
+          {{ post.date  | readableDate }}
         </li>
         {% endfor %}
       </ul>

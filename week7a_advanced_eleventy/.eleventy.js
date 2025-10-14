@@ -6,8 +6,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" })
-      .toFormat("LLLL d, yyyy");
+    // Format in Eastern Time (America/New_York) with time and short zone name
+    return DateTime.fromJSDate(dateObj, { zone: "America/New_York" })
+      .toFormat("LLLL d, yyyy, h:mm a 'EST'");
   });
 
   return {
