@@ -1,0 +1,109 @@
+<h1>Deploying this Eleventy site to GitHub Pages</h1>
+<p>This document explains two straightforward ways to publish the <code>week6_eleventy_blog_in_class</code> site on GitHub Pages and includes commands you can run locally (PowerShell examples).</p>
+<p>Which approach to use?</p>
+<ul>
+<li>Use the <code>docs/</code> folder approach if you want to publish from the <code>main</code> branch and keep the site output as a folder in the repo. This is convenient for student projects and does not require extra branches.</li>
+<li>Use the <code>gh-pages</code> branch approach if you prefer to keep all generated files separate from the main branch; this requires pushing the built site to a separate branch.</li>
+</ul>
+<p>Before you begin</p>
+<ul>
+<li>Make sure your site builds locally: <code>npm run build</code> (this generates <code>_site</code> by default unless you use <code>build:docs</code>).</li>
+<li>If you host at a project path (e.g., <code>https://username.github.io/repo-name/</code>) you should configure Eleventy to use <code>pathPrefix</code> in <code>.eleventy.js</code> and use the <code>| url</code> filter for asset links. See the &quot;Path prefix / project site&quot; section below.</li>
+</ul>
+<p>Option A — Serve from <code>docs/</code> on the <code>main</code> branch (simple)</p>
+<ol>
+<li>Build the site output into the <code>docs/</code> folder (there's an npm script):</li>
+</ol>
+<pre><code class="language-powershell">cd 'week6_eleventy_blog_in_class'
+npm run build:docs
+</code></pre>
+<p>That runs Eleventy and writes the static site into <code>./docs</code>.</p>
+<ol start="2">
+<li>Commit and push the <code>docs</code> folder to your <code>main</code> branch:</li>
+</ol>
+<pre><code class="language-powershell">git add docs
+git commit -m &quot;Build site to docs/ for GitHub Pages&quot;
+git push origin main
+</code></pre>
+<ol start="3">
+<li>
+<p>On GitHub, go to your repository Settings → Pages, and under &quot;Build and deployment&quot; choose:</p>
+<ul>
+<li>Source: Branch <code>main</code></li>
+<li>Folder: <code>/docs</code></li>
+</ul>
+</li>
+<li>
+<p>Save. GitHub Pages will publish the site at <code>https://&lt;username&gt;.github.io/&lt;repo&gt;/</code> (if a project site) or <code>https://&lt;username&gt;.github.io/</code> (if user/organization page).</p>
+</li>
+</ol>
+<p>Option B — Publish to <code>gh-pages</code> branch (keeps build output out of main)</p>
+<ol>
+<li>Build the site to a temporary directory, then push to <code>gh-pages</code> branch. Example using <code>gh-pages</code> package or manual push:</li>
+</ol>
+<pre><code class="language-powershell">cd 'week6_eleventy_blog_in_class'
+# build into a folder named 'docs' or '_site'
+npm run build:docs
+# push the contents of docs/ to gh-pages branch
+# simple manual (force) approach - be careful: this will overwrite gh-pages
+git checkout --orphan gh-pages
+git --work-tree docs add --all
+git --work-tree docs commit -m &quot;Publish site&quot;
+git push origin HEAD:gh-pages --force
+# return to main
+git checkout main
+</code></pre>
+<ol start="2">
+<li>In GitHub Settings → Pages, set Source to <code>gh-pages</code> branch (root). Save.</li>
+</ol>
+<p>Path prefix / project site</p>
+<ul>
+<li>If your repository will be served from <code>https://username.github.io/repo-name/</code> (a project site), set <code>pathPrefix</code> in <code>.eleventy.js</code> and use the <code>| url</code> filter in templates/Markdown. Example in <code>.eleventy.js</code>:</li>
+</ul>
+<pre><code class="language-js">module.exports = function(eleventyConfig) {
+  return {
+    pathPrefix: &quot;/repo-name/&quot;,
+    dir: { input: &quot;.&quot;, output: &quot;_site&quot; }
+  };
+};
+</code></pre>
+<ul>
+<li>Then update templates and assets like this (Nunjucks/Liquid example):</li>
+</ul>
+<pre><code class="language-njk">&lt;link rel=&quot;stylesheet&quot; href=&quot;/styles/styles.css&quot;&gt;
+&lt;script src=&quot;/scripts/hero-scramble.js&quot;&gt;&lt;/script&gt;
+&lt;img src=&quot;.&quot; alt=&quot;...&quot;&gt;
+</code></pre>
+<p>This ensures URL paths include the prefix automatically.</p>
+<p>Quick commands reference (PowerShell)</p>
+<ul>
+<li>Build locally (default output _site):</li>
+</ul>
+<pre><code class="language-powershell">cd 'week6_eleventy_blog_in_class'
+npm run build
+</code></pre>
+<ul>
+<li>Build into <code>docs/</code> for GitHub Pages <code>main</code>/<code>docs</code>:</li>
+</ul>
+<pre><code class="language-powershell">cd 'week6_eleventy_blog_in_class'
+npm run build:docs
+</code></pre>
+<ul>
+<li>Start dev server (watch + serve):</li>
+</ul>
+<pre><code class="language-powershell">cd 'week6_eleventy_blog_in_class'
+npm start
+</code></pre>
+<p>Notes</p>
+<ul>
+<li>Keep your source files (templates, posts) in the repo. Only the generated files (in <code>docs/</code> or <code>gh-pages</code>) are required by GitHub Pages to serve the site.</li>
+<li>If you change <code>pathPrefix</code>, update templates to use the <code>url</code> filter or adjust resource paths accordingly.</li>
+<li>If you use custom domain, add a <code>CNAME</code> file into <code>docs/</code> (containing the domain) before pushing.</li>
+</ul>
+<p>If you want, I can:</p>
+<ul>
+<li>Add a <code>build</code> and <code>build:docs</code> npm script (so you can run the commands above) — I already prepared the changes in the repo.</li>
+<li>Update templates to use <code>| url</code> filters and add a commented example <code>pathPrefix</code> to <code>.eleventy.js</code>.</li>
+<li>Automate deployment to <code>gh-pages</code> with a script.</li>
+</ul>
+<p>Which of those would you like me to do next?</p>
