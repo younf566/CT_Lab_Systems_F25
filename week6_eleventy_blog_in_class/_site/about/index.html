@@ -2,40 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>About</title>
     <link rel="stylesheet" href="/styles/styles.css">
   </head>
-  <body>
+  <body class="about">
      <!-- _includes/nav.njk -->
-<nav>
-	<ul>
-	  <li class="nav-item"><a href="/">Home</a></li>
-	  <li class="nav-item"><a href="/about/">About</a></li>
-	</ul>
+
+<nav class="site-nav">
+	<a href="/">Home</a>
+	<a href="/about/">About</a>
 </nav>
-    <!--- injects data content from our markdown file ---> 
-    <main>
+    <div class="layout-divider">
+      <div class="aura-blob" aria-hidden="true"></div>
+      <main>
         
-            <h1>About page</h1>
-<p>This a page to describe what my site is about.</p>
+            <header class="hero">
+	<h1 class="hero-title">about</h1>
+	<p class="hero-sub">A small journalism-style collection by Faye Young</p>
+</header>
+<h2>What this site is</h2>
+<p>This site is an experimental, student-made digital collection that presents short essays, reflections, and journal-style pieces about culture, knowledge, and public life. It uses a clean editorial layout inspired by small press magazines: a left column for navigation and hero content, and a right column for the latest pieces.</p>
+<p>The project demonstrates:</p>
+<ul>
+<li>A minimal Eleventy setup for content-driven static sites</li>
+<li>Simple client-side filtering by category (reflection, journal)</li>
+<li>Lightweight typographic styling using a self-hosted display face</li>
+<li>Small presentation scripts for a playful hero title and image rotator</li>
+</ul>
+<p>If you want to get in touch or contribute, add a post in the <code>posts/</code> folder and push the changes — the build will pick it up.</p>
 
         
+      </main>
+    </div>
 
-        <h2>Latest Posts</h2>
-        <ul>
-            <!-- loops through all of our md files with the tag 'post' --> 
-        
-        <li><a href="/posts/first/">First Post</a> – Wed Oct 01 2025 17:50:46 GMT-0400 (Eastern Daylight Time)</li>
-        
-        <li><a href="/posts/second/">Second post</a> – Wed Oct 01 2025 17:52:59 GMT-0400 (Eastern Daylight Time)</li>
-        
-        </ul>
-    </main>
-    
      <!-- _includes/footer.njk -->
 <footer>
-  <p>Copyright © 2025</p>
-</footer>
-
-  </body>
+  <p>Copyright Faye Young Blog © 2025</p>
+</footer> 
+</body>
+  <script src="/scripts/hero-scramble.js"></script>
+</html>
 </html>

@@ -1,0 +1,11 @@
+---
+title: Introduction
+date: 2025-10-10
+layout: post.njk
+tags: post, reflection
+image: /images/title_image.png
+---
+
+Competitive school culture conditioned me to believe that that intelligence meant being the token “smart kid” with the right answer. Living off moments where you could solve what adults could not. My own version of this came when my father would comically call me over to “fix” the family computer for the third time in one night. He would stand behind me with his arms crossed and for a few glorious minutes, I felt like the smartest person in the room. 
+As I matured, I began to recognize the deepest forms of intelligence in my life looked nothing of the sort. My parents shaped a life that became a paradigm of a new form of intelligence. My dad would sneak leftovers from his third overnight shift at the local buffet; a job he took on to help my mom pay for her way through law school. By the time my brother and I dug into the tasty morsels, he was already away at his main job as a Chinese dance teacher. And my mom managed to stretch a week’s worth of meals out of a single bag of groceries, ensuring our bellies never went hungry. Intelligence revealed itself to me not defined by an abstract concept of answers and algorithms, but through instinct to keep creating even when there’s little left to create with. My parents’ testimony ignited my fascination in the ways we can explore different systems of human interactions like endurance and love. To honor them I center my design with care, shaped by necessity, and guided by empathy. 
+

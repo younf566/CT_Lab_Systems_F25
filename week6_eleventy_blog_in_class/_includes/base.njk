@@ -2,27 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/styles/styles.css">
   </head>
-  <body>
+  <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
     {% include "nav.njk" %}
-    <!--- injects data content from our markdown file ---> 
-    <main>
+    <div class="layout-divider">
+      <div class="aura-blob" aria-hidden="true"></div>
+      <main>
         {% block content %}
             {{ content | safe }}
         {% endblock %}
+      </main>
+    </div>
 
-        <h2>Latest Posts</h2>
-        <ul>
-            <!-- loops through all of our md files with the tag 'post' --> 
-        {% for post in collections.post %}
-        <li><a href="{{ post.url }}">{{ post.data.title }}</a> – {{ post.date }}</li>
-        {% endfor %}
-        </ul>
-    </main>
-    
     {% include "footer.njk" %}
-
-  </body>
+</body>
+  <script src="/scripts/hero-scramble.js"></script>
+</html>
 </html>

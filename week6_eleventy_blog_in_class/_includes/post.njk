@@ -2,8 +2,21 @@
 
 {% block content %}
   <article>
-    <h2>{{ title }}</h2>
-    <p><em>{{ date }}</em></p>
+    {% if title %}<h1>{{ title }}</h1>{% endif %}
+    {% if date %}<p class="meta"><em>{{ date }}</em></p>{% endif %}
+
+    {% if image %}
+      <figure>
+        <img src="{{ image }}" alt="{{ title }} image">
+      </figure>
+    {% endif %}
+
     {{ content | safe }}
+    {%- comment -%} thumbnails (question-mark/title images) appended after the content {%- endcomment -%}
+    <div class="post-thumbs">
+      <img class="post-thumb" src="/images/typography_questionmark.jpeg" alt="">
+      <img class="post-thumb" src="/images/typography_questionmark - Copy.jpeg" alt="">
+      <img class="post-thumb" src="/images/typography_questionmark - Copy (3).jpeg" alt="">
+    </div>
   </article>
 {% endblock %}

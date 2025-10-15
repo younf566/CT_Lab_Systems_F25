@@ -2,40 +2,91 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Home</title>
     <link rel="stylesheet" href="/styles/styles.css">
   </head>
-  <body>
+  <body class="home">
      <!-- _includes/nav.njk -->
-<nav>
-	<ul>
-	  <li class="nav-item"><a href="/">Home</a></li>
-	  <li class="nav-item"><a href="/about/">About</a></li>
-	</ul>
+
+<nav class="site-nav">
+	<a href="/">Home</a>
+	<a href="/about/">About</a>
 </nav>
-    <!--- injects data content from our markdown file ---> 
-    <main>
+    <div class="layout-divider">
+      <div class="aura-blob" aria-hidden="true"></div>
+      <main>
         
-            <h1>Welcome to my blog!</h1>
-<p>This page is using a general layout.</p>
+            <header class="hero">
+			<h1 class="hero-title">matter of intelligence
+				<span class="hero-images" aria-hidden="true">
+					<img class="hero-thumb visible" src="/images/typography_questionmark.jpeg" alt="">
+					<img class="hero-thumb" src="/images/typography_questionmark - Copy.jpeg" alt="">
+					<img class="hero-thumb" src="/images/typography_questionmark - Copy (3).jpeg" alt="">
+					<img class="hero-thumb" src="/images/title_image.png" alt="">
+					<img class="hero-thumb" src="/images/title2_image.png" alt="">
+					<img class="hero-thumb" src="/images/title3_image.png" alt="">
+				</span>
+			</h1>
+	<p class="hero-sub">A small journalism-style collection</p>
+</header>
+<div class="filter-bar">
+	<label for="tag-filter">Filter:</label>
+	<select id="tag-filter">
+		<option value="all">All</option>
+		<option value="reflection">Reflection</option>
+		<option value="review">Review</option>
+		<option value="journal">Journal</option>
+	</select>
+</div>
+<section>
+	<h2>Latest | Faye Young</h2>
+	<ul class="posts">
+<p><li class="post-item" data-tags="post, reflection">
+<a class="post-card" href="/posts/introduction/"></p>
+<p><img src="/images/title_image.png" alt="Introduction image"></p>
+<p><h3>Introduction</h3>
+<p class="meta">Thu Oct 09 2025 20:00:00 GMT-0400 (Eastern Daylight Time)</p>
+<p class="excerpt">Competitive school culture conditioned me to believe that that intelligence meant being the token “smart kid” with the right answer. Livi...</p>
+</a>
+</li></p>
+<p><li class="post-item" data-tags="post, journal">
+<a class="post-card" href="/posts/war-on-knowledge/"></p>
+<p><img src="/images/title2_image.png" alt="The War on Knowledge image"></p>
+<p><h3>The War on Knowledge</h3>
+<p class="meta">Sat Oct 11 2025 20:00:00 GMT-0400 (Eastern Daylight Time)</p>
+<p class="excerpt">Every week brings a new escalation — policy threats, lawfare, brutal funding cuts, and the weaponization of both the border regime and th...</p>
+</a>
+</li></p>
+<p><li class="post-item" data-tags="post, journal">
+<a class="post-card" href="/posts/free-speech-flattened/"></p>
+<p><img src="/images/title3_image.png" alt="Free Speech, Flattened image"></p>
+<p><h3>Free Speech, Flattened</h3>
+<p class="meta">Sun Oct 12 2025 20:00:00 GMT-0400 (Eastern Daylight Time)</p>
+<p class="excerpt">The natural reaction from writers, educators, and researchers has been to rally under the banner of free speech. It’s a vital defense — e...</p>
+</a>
+</li></p>
+<p><li class="post-item" data-tags="post, journal">
+<a class="post-card" href="/posts/white-backlash-and-erasure/"></p>
+<p><img src="/images/typography_questionmark - Copy (3).jpeg" alt="White Backlash and Erasure image"></p>
+<p><h3>White Backlash and Erasure</h3>
+<p class="meta">Mon Oct 13 2025 20:00:00 GMT-0400 (Eastern Daylight Time)</p>
+<p class="excerpt">Every time racial hierarchy in the U.S. has been challenged, it has been met with organized backlash — a coordinated attempt to reassert ...</p>
+</a>
+</li></p>
+<p></ul></p>
+</section>
+<script src="/scripts/filter.js"></script>
 
         
+      </main>
+    </div>
 
-        <h2>Latest Posts</h2>
-        <ul>
-            <!-- loops through all of our md files with the tag 'post' --> 
-        
-        <li><a href="/posts/first/">First Post</a> – Wed Oct 01 2025 17:50:46 GMT-0400 (Eastern Daylight Time)</li>
-        
-        <li><a href="/posts/second/">Second post</a> – Wed Oct 01 2025 17:52:59 GMT-0400 (Eastern Daylight Time)</li>
-        
-        </ul>
-    </main>
-    
      <!-- _includes/footer.njk -->
 <footer>
-  <p>Copyright © 2025</p>
-</footer>
-
-  </body>
+  <p>Copyright Faye Young Blog © 2025</p>
+</footer> 
+</body>
+  <script src="/scripts/hero-scramble.js"></script>
+</html>
 </html>

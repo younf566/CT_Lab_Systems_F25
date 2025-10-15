@@ -1,9 +1,0 @@
-/* we can use CSS variables to make changing the look & feel of our page easier */
-:root{
-  --bg: #f5f7fb;
-  --card: #fff;
-  --accent: #2563eb;
-  --muted: #6b7280;
-}
-
-
