@@ -172,20 +172,11 @@ section h2{ text-align: left; margin-left: 0; }
 .home .layout-divider main{ position: relative; z-index: 1 }
 
 .about main {
-    padding-left: 0.5rem;
+    padding-left: 2.5rem;
     padding-right: 2.5rem;
     max-width: calc(var(--container) - 4rem);
 }
 .about .hero { margin-bottom: 1.5rem }
-
-/* shift about content left so the divider intersects it visually */
-.about main {
-    transform: translateX(-4rem);
-}
-
-@media (max-width: 900px) {
-    .about main { transform: none; padding-left: 1rem; }
-}
 
 @media (max-width: 900px) {
     .about main { padding-left: 1rem; padding-right: 1rem; max-width: 100%; }
